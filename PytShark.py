@@ -7,7 +7,7 @@
 #|_|     \__  |  \__|______/|_| |_\_____|_|   |_| \_)
 #       (____/ (1.0)                                      
 # Execution sur VM Ubuntu/Debian avec le module "Python3-scapy"
-
+from scapy.all import sniff, wrpcap, rdpcap, TCP, UDP, ICMP
 
 def menu():
     print("Bienvenue sur PytSark !")
