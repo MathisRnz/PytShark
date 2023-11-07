@@ -5,7 +5,7 @@
 #|  ____/ | | (_   _)\____ \|  _ \(____ |/ ___) |_/ )
 #| |    | |_| | | |_ _____) ) | | / ___ | |   |  _ ( 
 #|_|     \__  |  \__|______/|_| |_\_____|_|   |_| \_)
-#       (____/ (1.0)                                      
+#       (____/ (1.2)                                      
 # Execution sur VM Ubuntu/Debian avec le module "Python3-scapy"
 from scapy.all import sniff, wrpcap, rdpcap, TCP, UDP, ICMP
 import sys
@@ -153,3 +153,11 @@ def analyse_ssh_packet(packet):
                 print("Version SSH:", version)
     else:
         print("Ce n'est pas un paquet SSH.")
+
+# Ajout de blocs try/except pour capturer les exceptions
+try:
+    # Appel à la fonction menu pour démarrer le programme
+    menu()
+except Exception as e:
+    # Affichage de l'erreur en cas d'échec du script
+    print("Une erreur s'est produite :", e)
