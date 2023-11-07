@@ -54,7 +54,7 @@ def menu():
  
 def capture_frame(file_name):
     print("Capture de la trame")
-    packets = sniff(count=10, iface='ens33') # Capturer une seule trame
+    packets = sniff(count=10, iface='enp0s3') # Capturer une seule trame
     wrpcap(file_name, packets) # Stocker la trame capturée dans un fichier
     print(f"Trame capturée et stockée dans le fichier : {file_name}")
 
