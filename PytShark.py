@@ -10,6 +10,14 @@
 from scapy.all import sniff, wrpcap, rdpcap, TCP, UDP, ICMP
 import sys
 
+# Ajout de blocs try/except pour capturer les exceptions
+try:
+    # Appel à la fonction menu pour démarrer le programme
+    menu()
+except Exception as e:
+    # Affichage de l'erreur en cas d'échec du script
+    print("Une erreur s'est produite :", e)
+
 def menu():
     print("Bienvenue sur PytSark !")
     print("1 - Capturer le trafic")
@@ -153,11 +161,3 @@ def analyse_ssh_packet(packet):
                 print("Version SSH:", version)
     else:
         print("Ce n'est pas un paquet SSH.")
-
-# Ajout de blocs try/except pour capturer les exceptions
-try:
-    # Appel à la fonction menu pour démarrer le programme
-    menu()
-except Exception as e:
-    # Affichage de l'erreur en cas d'échec du script
-    print("Une erreur s'est produite :", e)
